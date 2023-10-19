@@ -24,7 +24,7 @@ class ThirdsController < ApplicationController
                if @third.save
                     render json: @third, serializer: ThirdSerializer
                else
-                render json: @third.errors
+                render json: {error: "Record not Created!"},  status: :unprocessable_entity
                 end
             end
         
